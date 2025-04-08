@@ -36,7 +36,6 @@ RoseBowl is a mobile application built with **Flutter** designed to be your pers
 | :------------------------------- | :------------------------------- | :------------------------------- |
 | ![](assets/screenshots/home.png) | ![](assets/screenshots/chatbot.png) | ![](assets/screenshots/mealplan.png) |
 
-*(Ensure these images are present in the `assets/screenshots/` directory in your repository)*
 
 ---
 
