@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.rosebowl.app-mergeReleaseResources-42:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/Users/ragnar/.gradle/caches/transforms-3/5922a9695dc656aea5e53486ae417f17/transformed/appcompat-1.1.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    }
+                }
+            ]
+        }
+    ]
+}

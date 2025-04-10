@@ -1,0 +1,20 @@
+// File: android/build.gradle
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.1' // Update this to the latest version
+        classpath 'com.google.gms:google-services:4.3.15' // If you're using Firebase
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0' // Ensure this matches the Kotlin version you're using
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}

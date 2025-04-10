@@ -1,0 +1,45 @@
+android {
+    namespace = "com.example.rosebowl"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+
+    kotlin {
+        jvmToolchain(21) // Ensures Kotlin matches Java 21
+    }
+
+    defaultConfig {
+        applicationId = "com.example.rosebowl"
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            shrinkResources false
+            minifyEnabled false
+        }
+    }
+
+    signingConfigs {
+        release {
+            if (project.hasProperty('keyStore')) {
+                storeFile file(keyStore)
+                storePassword keyStorePassword
+                keyAlias keyAlias
+                keyPassword keyPassword
+            }
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
