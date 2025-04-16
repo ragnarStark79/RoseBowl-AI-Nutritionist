@@ -29,10 +29,12 @@ class GeminiService {
         final data = json.decode(response.body);
         return data['candidates'][0]['content']['parts'][0]['text'];
       } else {
-        return 'Sorry, I couldn’t understand that. Please try again.';
+        return 'The server returned an error (${response.statusCode}). Please try again.';
       }
     } catch (e) {
-      return 'Error occurred: $e';
+      // Do not expose full error to user; log internally if needed
+      print('GeminiService Error: ${e.runtimeType}');
+      return 'Unable to connect to the AI service. Please check your internet and try again.';
     }
   }
 }

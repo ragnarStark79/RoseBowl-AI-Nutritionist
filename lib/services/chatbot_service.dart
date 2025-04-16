@@ -6,19 +6,16 @@ class ChatbotService {
   static const String botName = 'Nutritionist Assistant';
   static const String botAvatar = 'assets/images/bot_avatar.png';
 
-  // Method to process user messages and get responses with conversation history
   static Future<String> processMessage(String userMessage, List<Map<String, dynamic>> chatHistory) async {
     final startTime = DateTime.now();
 
     try {
-      // Build conversation history string
       String conversationHistory = '';
       for (var message in chatHistory) {
         final role = message['role'] == 'user' ? 'User' : 'Assistant';
         conversationHistory += '$role: ${message['content']}\n';
       }
 
-      // Add system prompt with conversation context
       final prompt = '''
 You are a professional nutritionist assistant named RoseBowl Nutrition.
 Respond to user queries about nutrition, diet, healthy eating, and meal planning.
@@ -37,7 +34,7 @@ Current query: $userMessage
 
       return response;
     } catch (e) {
-      debugPrint('Error processing message: $e');
+      debugPrint('ChatbotService Error: ${e.runtimeType}');
       return "I'm having trouble connecting right now. Please try again in a moment.";
     }
   }
